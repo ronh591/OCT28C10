@@ -1,0 +1,9 @@
+int **a2;
+// ...
+func(a2);
+Use code with caution. Learn more
+Passing the array as a reference:
+C++
+int &a2;
+// ...
+func(a2);
