@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+int main() 
+{
+string mynames[]={"J", "S", "A", "B"};
+  string mynames1[]={"J", "S", "O", "N"};
+  int size = 4;
+    for (int i = 0; i < size;  i++)
+    {
+      if (mynames[i] == mynames1[i])
+      {
+         cout << "match" << endl;
+         cout << mynames[i] << mynames1[i] << endl;
+                 }
+      }
+}
+/*match
+JJ
+match
+SS
+ */
