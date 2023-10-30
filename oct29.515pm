@@ -1,0 +1,16 @@
+#include <iostream>
+int main() 
+{
+   int scores[]{84,92,76,81,56};
+   int maxScore = 0; 
+   for (auto score : scores)
+   {
+     if (score > maxScore)
+     {
+        maxScore = score;
+     }
+   }
+   std::cout << "the best score was " << maxScore << '\n';
+
+}
+//the best score was 92
