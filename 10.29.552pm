@@ -1,0 +1,58 @@
+/*For-each doesn’t work with pointers to an array
+In order to iterate through the array, for-each needs 
+to know how big the array is, which means knowing the array size.
+ Because array pointers do not know their size, for-each loops will 
+not work with them.  So, what is an array pointer?  It is the memory 
+location of an array, and you automatically use them when you pass an array 
+to a function. 
+
+So, just by putting an array in the parameter list of a function, 
+you are using an array pointer.  This is why you cannot pass an array to a 
+function by reference - it is essentially already automatically being passed 
+by reference.  This is because arrays can be very big and you cannot 
+create a copy of a huge array to a function.  It would take up way too 
+much memory!  So, all arrays that are passed to functions are array 
+pointers (they point to the array only).  The downside is that array pointers 
+do not know the size of the memory location they are pointing to, and therefore, 
+they do not know the array size.  So, you cannot use the for-each loop with 
+parameter arrays.
+
+This will not work:*/
+#include <iostream>
+int sumArray(int array[]) //array is a pointer
+{
+   int sum { 0 };
+   for (auto number : array) // array size unknown
+   {
+      sum += number;
+   }
+   return sum;
+}
+int main()
+{
+    int array[]{9,7,5,3,1};
+    std::cout << sumArray(array) << '\n'; array is pointer now
+}
+/*main.cpp:25:23: error: cannot build range expression with array function parameter 'array' since parameter with array type 'int[]' is treated as pointer type 'int *'
+   for (auto number : array) // array size unknown
+                      ^~~~~
+main.cpp:22:18: note: declared here
+int sumArray(int array[]) //array is a pointer
+                 ^
+main.cpp:34:48: error: expected ';' after expression
+    std::cout << sumArray(array) << '\n'; array is pointer now
+                                               ^
+                                               ;
+main.cpp:34:49: error: unknown type name 'is'
+    std::cout << sumArray(array) << '\n'; array is pointer now
+                                                ^
+main.cpp:34:59: error: expected ';' at end of declaration
+    std::cout << sumArray(array) << '\n'; array is pointer now
+                                                          ^
+                                                          ;
+main.cpp:34:43: warning: expression result unused [-Wunused-value]
+    std::cout << sumArray(array) << '\n'; array is pointer now
+                                          ^~~~~
+1 warning and 4 errors generated.
+
+C++ Shell 2.0 © cpp.sh 2014-2023 | buy me a coffe*/
