@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int getOddNumbers(int arr[], int size) {
+  int oddNumbers[size];
+  int oddNumberCount = 0;
+  for (int i = 0; i < size; i++) {
+   if (arr[i] % 2 != 0) {
+     oddNumbers[oddNumberCount] = arr[i];
+     oddNumberCount++;
+    }
+  }
+  return oddNumberCount;
+}
+int main() {
+  int arr[] = {1,2,3,4,5};
+  int size = sizeof(arr)/ sizeof(arr[0]);
+  int oddNumberCount = getOddNumbers(arr, size);//make a copy of the function with a variable..this is a POINTER
+  cout << "there are " << oddNumberCount << " odd numbers in the array. "<< "I USED A POINTER TO CALL THE FUNCTION" << endl;
+  return 0;
+}
+//there are 3 odd numbers in the array. I USED A POINTER TO CALL THE FUNCTION
