@@ -1,0 +1,26 @@
+#include <iostream>
+
+using namespace std;
+int main() 
+{
+//range based
+int mylist[] = { 21, 0, -33, 22, 0, 1000, 21, 12};
+int sum = 0.0; //accumulator variable
+
+for (int a_number : mylist)
+{
+  if(a_number > 0)
+  {
+    cout <<a_number<<" ";
+  }
+}
+cout << endl;
+int size = sizeof(mylist) / sizeof(mylist[0]);
+//Traditional for loop:
+for (int i = 0; i < size; i++)
+{
+   if(mylist[i] >0)
+   {
+      cout << mylist[i] << " " ;
+   }
+}}
