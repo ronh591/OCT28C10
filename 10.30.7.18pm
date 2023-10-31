@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+int getOddNumbers(int arr[], int size) {
+  int oddNumbers[size];
+  int oddNumberCount = 0;
+  for (int i=0; i < size; i++) {
+    if (arr[i] % 2 != 0) {
+      oddNumbers[oddNumberCount] = arr[i];
+      oddNumberCount++;
+    }
+  }
+  return oddNumberCount;
+}
+int main() {
+  int arr[] = {1,2,3,4,5};
+  int size = sizeof(arr)/sizeof(arr[0]);
+  int oddNumberCount = getOddNumbers(arr,size);
+//oddNumberCount is the [i] in arr[i]
+//oddNumbers is an array
+//getOddNumbers is a function
+  cout << "there are " << oddNumberCount << "  odd numbers" << endl;
+}
