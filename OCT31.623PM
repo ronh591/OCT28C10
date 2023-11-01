@@ -1,0 +1,40 @@
+/*getOddNumbers=x
+oddNumbers=y
+oddNumberCount = z
+arr=x1
+size=y1
+i=i
+sizeof=sizeof
+Start
+Declare an array of integers called `arr`
+Declare an integer variable called `size` and assign it the size of the array `arr`
+Declare an integer variable called `oddNumberCount` and assign it 0
+Call the function `getOddNumbers()` with the array `arr` and the variable `size` as parameters
+Assign the return value of the function `getOddNumbers()` to the variable `oddNumberCount`
+Print the message "There are " and the value of the variable `oddNumberCount` to the console
+Print the message " odd numbers in the array." to the console
+End
+*/
+
+#include <iostream>
+using namespace std;
+int x(int x1[], int y1) {
+  int y[y1];
+  int z = 0;
+  for (int i=0; i < y1; i++) {
+    if (x1[i] % 2 != 0) {
+      y[z] = x1[i];
+      z++;
+    }
+  }
+  return z;
+}
+int main() {
+  int x1[] = {1,2,3,4,5};
+  int y1 = sizeof(x1)/sizeof(x1[0]);
+  int z = x(x1,y1);
+//oddNumberCount is the [i] in arr[i]
+//oddNumbers is an array
+//getOddNumbers is a function
+  cout << "there are " << z << "  odd numbers" << endl;
+}
